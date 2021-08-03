@@ -12,6 +12,9 @@ jobs:
       - name: install packages
         run: npm install
 
+      - name: set auth_token
+        run: export SENTRY_AUTH=${{ secrets.SSH_HOST }}
+
       - name: build
         run: npm run build
 

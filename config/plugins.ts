@@ -67,13 +67,13 @@ export function loadPlugins(env: IEnv): any[] {
 			openAnalyzer: false,
 			logLevel: "info",
 		}));
-		// plugins.push(new SentryWebpackPlugin({
-		// 	authToken: env.SENTRY_AUTH,
-		// 	org: "samurais",
-		// 	project: "samurais",
-		// 	include: "./dist",
-		// 	ignore: ["node_modules", "webpack.config.ts"],
-		// }));
+		plugins.push(new SentryWebpackPlugin({
+			authToken: env.SENTRY_AUTH,
+			org: "samurais",
+			project: "samurais",
+			include: "./dist",
+			ignore: ["node_modules", "webpack.config.ts"],
+		}));
 	}
 	return plugins;
 }

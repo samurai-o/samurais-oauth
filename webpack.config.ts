@@ -7,17 +7,17 @@ import { config } from "./config/index";
 const isProduction = process.env.NODE_ENV == "production";
 
 env({
-  path: join(__dirname, `${process.env.NODE_ENV}.env`),
+	path: join(__dirname, ".env"),
 });
 
 if (isProduction) {
-  config.mode = "production";
-  config.output.publicPath = "/auth/";
-  config.plugins.push(new MiniCssExtractPlugin());
+	config.mode = "production";
+	config.output.publicPath = `/${process.env.APP_NAME}/`;
+	config.plugins.push(new MiniCssExtractPlugin());
 
-  config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
+	config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
 } else {
-  config.mode = "development";
+	config.mode = "development";
 }
 
 export default config;
