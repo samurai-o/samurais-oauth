@@ -9,7 +9,17 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
+      - name: cache node_modules
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: install packages
+        if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
       - name: set auth_token
