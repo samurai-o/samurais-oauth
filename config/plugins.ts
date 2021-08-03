@@ -3,7 +3,7 @@ import {
 	AutomaticPrefetchPlugin,
 	BannerPlugin,
 	ProgressPlugin,
-	EnvironmentPlugin,
+	DefinePlugin
 } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import HtmlWebpackExternalsPlugin from "html-webpack-externals-plugin";
@@ -14,7 +14,7 @@ import SentryWebpackPlugin from "@sentry/webpack-plugin";
 import { resolve } from "path";
 import { IEnv } from "./interface";
 const prodGzipList = ["js", "css", "png", "jpeg", "gif"];
-
+console.log(process.env);
 const plugins = [
 	new HtmlWebpackPlugin({
 		template: "public/index.html",
@@ -22,14 +22,14 @@ const plugins = [
 		favicon: "public/icon.ico",
 		inject: true
 	}),
+	new DefinePlugin({
+		"process.env.NODE_ENV": process.env.NODE_ENV,
+	}),
 	new AutomaticPrefetchPlugin(),
 	new BannerPlugin({ banner: "samurais" }),
 	new ProgressPlugin({
 		activeModules: true,
 		percentBy: "modules"
-	}),
-	new EnvironmentPlugin({
-		NODEENV: "process.env.NODE_ENV",
 	}),
 	new HtmlWebpackExternalsPlugin({
 		externals: [
