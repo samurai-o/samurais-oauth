@@ -24,10 +24,6 @@ const plugins = [
 		favicon: "public/icon.ico",
 		inject: true
 	}),
-	new DefinePlugin({
-		"process.env.NODE_ENV": process.env.NODE_ENV,
-		"process.env.APPVERSION": pkg.version,
-	}),
 	new AutomaticPrefetchPlugin(),
 	new BannerPlugin({ banner: "samurais" }),
 	new ProgressPlugin({
@@ -53,6 +49,10 @@ const plugins = [
 
 
 export function loadPlugins(env: IEnv): any[] {
+	plugins.push(new DefinePlugin({
+		"process.env.NODE_ENV": JSON.stringify(env.NODE_ENV),
+		"process.env.APPVERSION": JSON.stringify(pkg.version),
+	}));
 	if (env.NODE_ENV === "production") {
 		plugins.push(new CompressionWebpackPlugin({
 			algorithm: "gzip", // 指定生成gzip格式
