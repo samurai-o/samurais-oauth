@@ -22,5 +22,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          scp_source: ./dist/
+          scp_source: ./dist/*
           scp_target: /home/web/auth/
