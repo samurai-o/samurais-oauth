@@ -6,7 +6,7 @@ import { Main } from "./router";
 const { NODE_ENV, APPVERSION } = process.env;
 
 Sentry.init({
-	dsn: "https://b3280df6c5ba4a8aa2a8ef95eafa4588@o937351.ingest.sentry.io/5887815",
+	dsn: "https://2835e2e9da7b4b708203b7f3b367c6fb@o937351.ingest.sentry.io/5891924",
 	debug: true,
 	integrations: [new Integrations.BrowserTracing()],
 	release: APPVERSION,
