@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "baseUrl": "./",
+    "target": "es5",
+    "allowJs": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "config/*": [
+        "config/*"
+      ]
+    }
+  },
+  "include": [
+    "mock/**/*",
+    "src/**/*",
+    "config/**/*",
+    ".umirc.ts",
+    "types.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "es",
+    "dist",
+    "typings",
+    "**/__test__",
+    "test",
+    "docs",
+    "tests"
+  ]
+}
