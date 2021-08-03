@@ -18,7 +18,9 @@ const prodGzipList = ["js", "css", "png", "jpeg", "gif"];
 const plugins = [
 	new HtmlWebpackPlugin({
 		template: "public/index.html",
-		title: "cdn"
+		title: "cdn",
+		favicon: "public/icon.ico",
+		inject: true
 	}),
 	new AutomaticPrefetchPlugin(),
 	new BannerPlugin({ banner: "samurais" }),
