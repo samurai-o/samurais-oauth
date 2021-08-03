@@ -7,6 +7,7 @@
     "target": "es5",
     "allowJs": true,
     "jsx": "react",
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": [
@@ -18,11 +19,10 @@
     }
   },
   "include": [
-    "mock/**/*",
     "src/**/*",
-    "config/**/*",
-    ".umirc.ts",
-    "types.d.ts"
+    "config/*",
+    "types.d.ts",
+    "package.json"
   ],
   "exclude": [
     "node_modules",

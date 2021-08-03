@@ -13,8 +13,10 @@ import CompressionWebpackPlugin from "compression-webpack-plugin";
 import SentryWebpackPlugin from "@sentry/webpack-plugin";
 import { resolve } from "path";
 import { IEnv } from "./interface";
+import pkg from "../package.json";
+
 const prodGzipList = ["js", "css", "png", "jpeg", "gif"];
-console.log(process.env);
+
 const plugins = [
 	new HtmlWebpackPlugin({
 		template: "public/index.html",
@@ -24,6 +26,7 @@ const plugins = [
 	}),
 	new DefinePlugin({
 		"process.env.NODE_ENV": process.env.NODE_ENV,
+		"process.env.APPVERSION": pkg.version,
 	}),
 	new AutomaticPrefetchPlugin(),
 	new BannerPlugin({ banner: "samurais" }),
@@ -67,13 +70,13 @@ export function loadPlugins(env: IEnv): any[] {
 			openAnalyzer: false,
 			logLevel: "info",
 		}));
-		// plugins.push(new SentryWebpackPlugin({
-		// 	authToken: env.SENTRY_AUTH,
-		// 	org: "samurais",
-		// 	project: "samurais",
-		// 	include: "./dist",
-		// 	ignore: ["node_modules", "webpack.config.ts"],
-		// }));
+		plugins.push(new SentryWebpackPlugin({
+			release: `${env.NODE_ENV}@${pkg.version}`,
+			include: resolve(__dirname, "../dist/"),
+			ignore: ["node_modules", "webpack.config.ts"],
+			configFile: resolve(__dirname, "../.sentryclirc"),
+			urlPrefix: "~/auth"
+		}));
 	}
 	return plugins;
 }
