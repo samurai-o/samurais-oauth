@@ -71,7 +71,7 @@ export function loadPlugins(env: IEnv): any[] {
 			logLevel: "info",
 		}));
 		plugins.push(new SentryWebpackPlugin({
-			release: `${env.NODE_ENV}@${pkg.version}`,
+			release: pkg.version,
 			include: resolve(__dirname, "../dist/"),
 			ignore: ["node_modules", "webpack.config.ts"],
 			configFile: resolve(__dirname, "../.sentryclirc"),

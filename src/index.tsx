@@ -7,8 +7,10 @@ const { NODE_ENV, APPVERSION } = process.env;
 
 Sentry.init({
 	dsn: "https://b3280df6c5ba4a8aa2a8ef95eafa4588@o937351.ingest.sentry.io/5887815",
+	debug: true,
 	integrations: [new Integrations.BrowserTracing()],
-	release: `${NODE_ENV}@${APPVERSION}`,
+	release: APPVERSION,
+	environment: NODE_ENV,
 	tracesSampleRate: 1.0,
 });
 
