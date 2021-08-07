@@ -9,6 +9,12 @@
     "jsx": "react",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "types": [
+      "cypress"
+    ],
+    "lib": [
+      "DOM"
+    ],
     "paths": {
       "@/*": [
         "src/*"
@@ -19,6 +25,7 @@
     }
   },
   "include": [
+    "cypress/**/*.ts",
     "src/**/*",
     "config/*",
     "types.d.ts",
