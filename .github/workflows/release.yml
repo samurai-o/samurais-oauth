@@ -1,5 +1,8 @@
 name: release-build
-on: [push]
+on:
+  push:
+    tags:
+      - v*
 jobs:
   build_job:
     runs-on: ubuntu-latest
