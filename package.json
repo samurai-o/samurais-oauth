@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production webpack --mode=production",
-    "lint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\" \"config/*.ts\" \"webpack.config.ts\" --fix",
+    "dev:prd": "cross-env NODE_ENV=production webpack serve",
+    "dev": "webpack serve",
     "watch": "webpack --watch",
-    "dev": "webpack serve"
+    "lint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\" \"config/*.ts\" \"webpack.config.ts\" --fix"
   },
   "author": "",
   "license": "ISC",
@@ -49,6 +50,7 @@
     "less": "^4.1.1",
     "less-loader": "^10.0.1",
     "mini-css-extract-plugin": "^2.1.0",
+    "mocker-api": "^2.9.0",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
     "prettier": "^2.3.2",
@@ -66,11 +68,13 @@
     "workbox-webpack-plugin": "^6.1.5"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.4",
     "@samuras/samurai-network": "^1.0.5",
     "@sentry/react": "^6.10.0",
     "@sentry/tracing": "^6.10.0",
     "crypto-js": "^4.1.1",
     "formik": "^2.2.9",
+    "graphql": "^15.5.1",
     "nprogress": "^0.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
