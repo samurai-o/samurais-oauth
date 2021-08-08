@@ -1,0 +1,59 @@
+name: test
+on:
+  push:
+    branches: [develop]
+jobs:
+  cypress:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: cache node_modules
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: install packages
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: test
+        run: npm run cypress
+
+  jest:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: cache node_modules
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: install packages
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: test
+        run: npm run jest
+

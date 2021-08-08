@@ -3,6 +3,7 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "module": "CommonJS",
+    "skipLibCheck": true,
     "baseUrl": "./",
     "target": "es5",
     "allowJs": true,
@@ -10,7 +11,7 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "types": [
-      "cypress"
+      "jest"
     ],
     "lib": [
       "DOM"
@@ -25,13 +26,13 @@
     }
   },
   "include": [
-    "cypress/**/*.ts",
     "src/**/*",
     "config/*",
     "types.d.ts",
     "package.json"
   ],
   "exclude": [
+    "cypress/**/*",
     "node_modules",
     "lib",
     "es",
