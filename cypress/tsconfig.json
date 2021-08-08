@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "rootDir": "./",
+        "baseUrl": "./",
+        "types": [
+            "Cypress"
+        ]
+    },
+    "include": [
+        "../node_modules/cypress",
+        "./**/*.ts"
+    ]
+}

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button 快照 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-bdnxRM fVVjRp"
+    type="button"
+  >
+    <div
+      class="sc-gtsrHT ljPrYI"
+    >
+      <span
+        class="sc-dlnjwi dDfwEM"
+      >
+        <svg
+          class="sc-hKFxyN cSAnyH"
+          height="20"
+          width="20"
+        >
+          <circle
+            class="sc-eCApnc ffLhqL"
+            cx="10"
+            cy="10"
+            r="8"
+          />
+        </svg>
+      </span>
+      测试
+    </div>
+  </button>
+</DocumentFragment>
+`;

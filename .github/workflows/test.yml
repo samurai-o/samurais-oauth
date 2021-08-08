@@ -1,8 +1,7 @@
-name: release-build
+name: test
 on:
   push:
-    tags:
-      - v*
+    branches: [develop]
 jobs:
   cypress:
     runs-on: ${{ matrix.os }}
@@ -58,40 +57,3 @@ jobs:
       - name: test
         run: npm run jest
 
-  build_job:
-    needs: [cypress, jest]
-    runs-on: ubuntu-latest
-    name: build
-    steps:
-      # check
-      - name: checkout
-        uses: actions/checkout@v2
-
-      - name: cache node_modules
-        uses: actions/cache@v1
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: install packages
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
-
-      - name: set auth_token
-        run: export SENTRY_AUTH=${{ secrets.SSH_HOST }}
-
-      - name: build
-        run: npm run build
-
-      - name: deploy
-        uses: kostya-ten/ssh-server-deploy@v4
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          port: ${{ secrets.SSH_PORT }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          scp_source: ./dist/*
-          scp_target: /home/web/auth/

@@ -3,12 +3,19 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "module": "CommonJS",
+    "skipLibCheck": true,
     "baseUrl": "./",
     "target": "es5",
     "allowJs": true,
     "jsx": "react",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "types": [
+      "jest"
+    ],
+    "lib": [
+      "DOM"
+    ],
     "paths": {
       "@/*": [
         "src/*"
@@ -25,6 +32,7 @@
     "package.json"
   ],
   "exclude": [
+    "cypress/**/*",
     "node_modules",
     "lib",
     "es",

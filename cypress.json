@@ -1,0 +1,9 @@
+{
+    "video": true,
+    "videosFolder": "cypress/videos",
+    "videoUploadOnPasses": true,
+    "watchForFileChanges": true,
+    "screenshotOnRunFailure": true,
+    "trashAssetsBeforeRuns": true,
+    "screenshotsFolder": "cypress/screenshots"
+}
