@@ -33,4 +33,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           scp_source: ./storybook-static/*
-          scp_target: /home/storybook/auth/
+          scp_target: /home/web/storybook/auth/
