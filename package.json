@@ -9,6 +9,7 @@
     "test:unit": "jest --coverage --updateSnapshot",
     "test:e2e": "cypress run",
     "test:e2e-gui": "cypress open",
+    "cypress:install": "cypress install",
     "dev": "webpack serve",
     "watch": "webpack --watch",
     "lint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\" \"config/*.ts\" \"cypress/**/*.ts\" \"webpack.config.ts\" --fix",
