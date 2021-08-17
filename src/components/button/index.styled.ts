@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 // 类型文件
 export type ButtonLoadingContainerStyledProps = {
-  loading?: boolean;
+  loading?: boolean | number;
 };
 
 export type LoadingIconStyledStatus = "active" | "actived";
