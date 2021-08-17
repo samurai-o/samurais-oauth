@@ -28,7 +28,7 @@ jobs:
         run: npm install
 
       - name: test
-        run: npm run cypress
+        run: npm run test:e2e
 
   jest:
     runs-on: ${{ matrix.os }}
@@ -55,5 +55,5 @@ jobs:
         run: npm install
 
       - name: test
-        run: npm run jest
+        run: npm run test:unit
 
