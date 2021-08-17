@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`button ButtonLoadingContainerStyled 样式组件快照 1`] = `
+exports[`button 组件测试 ButtonLoadingContainerStyled 样式组件快照 1`] = `
 <DocumentFragment>
   .c0 {
   display: inline-block;
@@ -20,7 +20,7 @@ exports[`button ButtonLoadingContainerStyled 样式组件快照 1`] = `
 </DocumentFragment>
 `;
 
-exports[`button ButtonStyled 样式组件快照 1`] = `
+exports[`button 组件测试 ButtonStyled 样式组件快照 1`] = `
 <DocumentFragment>
   .c0 {
   width: 100%;
@@ -54,7 +54,43 @@ exports[`button ButtonStyled 样式组件快照 1`] = `
 </DocumentFragment>
 `;
 
-exports[`button button 快照 1`] = `
+exports[`button 组件测试 LoadingIconStyled 样式组件快照 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 0px;
+  height: 0px;
+  background-color: #fff;
+  border: 0px solid #319bef;
+  border-radius: 50%;
+  display: inline-block;
+  top: 11px;
+  position: absolute;
+  left: 20px;
+}
+
+.c0::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI2OC44MzEgMjY4LjgzMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjY4LjgzMSAyNjguODMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTIyMy4yNTUsODMuNjU5bC04MC03OS45OThjLTQuODgxLTQuODgxLTEyLjc5Ny00Ljg4MS0xNy42NzgsMGwtODAsODBjLTQuODgzLDQuODgyLTQuODgzLDEyLjc5NiwwLDE3LjY3OCAgIGMyLjQzOSwyLjQ0LDUuNjQsMy42NjEsOC44MzksMy42NjFzNi4zOTctMS4yMjEsOC44MzktMy42NjFsNTguNjYxLTU4LjY2MXYyMTMuNjU0YzAsNi45MDMsNS41OTcsMTIuNSwxMi41LDEyLjUgICBjNi45MDEsMCwxMi41LTUuNTk3LDEyLjUtMTIuNVY0Mi42NzdsNTguNjYxLDU4LjY1OWM0Ljg4Myw0Ljg4MSwxMi43OTcsNC44ODEsMTcuNjc4LDAgICBDMjI4LjEzNyw5Ni40NTUsMjI4LjEzNyw4OC41NDEsMjIzLjI1NSw4My42NTl6IiBmaWxsPSIjMzE5YmVmIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==');
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+<span
+    class="c0"
+  />
+</DocumentFragment>
+`;
+
+exports[`button 组件测试 button 快照 1`] = `
 <DocumentFragment>
   .c0 {
   width: 100%;

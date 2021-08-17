@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { Checkbox } from "./checkbox";
 import { InputStyled } from "./index.styled";
@@ -13,7 +14,7 @@ export type InputType =
 export type InputProps = {
   id?: string;
   name?: string;
-  value?: unknown;
+  value?: any;
   placeholder?: string;
   type?: InputType;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
