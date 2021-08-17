@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input Input 快照 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1.8px solid #fff;
+  color: #fff;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+  -webkit-transition: border 0.2s ease 0s,padding-right 0.1s ease 0s;
+  transition: border 0.2s ease 0s,padding-right 0.1s ease 0s;
+}
+
+.c0:focus {
+  outline: 1.8px solid transparent;
+  border: 1.8px solid #ffffffab;
+}
+
+.c0::-ms-input-placeholder {
+  color: #fff;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.c0::-moz-input-placeholder {
+  color: #fff;
+}
+
+<input
+    class="c0"
+  />
+</DocumentFragment>
+`;
