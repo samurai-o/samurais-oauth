@@ -1,6 +1,3 @@
-# 🚀  samurais 单点登录前端
-
-#### 项目结构
 .
 ├── README.md
 ├── config
@@ -49,14 +46,4 @@
 ├── types.d.ts
 └── webpack.config.ts
 
-``` bash
-npm run build
-```
-
-or
-
-``` bash
-yarn build
-```
-
-to bundle your application
+18 directories, 28 files

@@ -1,24 +1,181 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`button 快照 1`] = `
+exports[`button 组件测试 ButtonLoadingContainerStyled 样式组件快照 1`] = `
 <DocumentFragment>
-  <button
-    class="sc-bdnxRM fVVjRp"
+  .c0 {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  opacity: 1;
+  overflow: hidden;
+  -webkit-transition: width 0.2s ease 0s,opacity 0.4s ease 0.2s, margin-right 0.3s ease 0s;
+  transition: width 0.2s ease 0s,opacity 0.4s ease 0.2s, margin-right 0.3s ease 0s;
+}
+
+<span
+    class="c0"
+    loading="1"
+  />
+</DocumentFragment>
+`;
+
+exports[`button 组件测试 ButtonStyled 样式组件快照 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  outline: none;
+  border: 0px;
+  margin: 0px;
+  border-radius: 4px;
+  padding: 6px 10px;
+  background: #fff;
+  cursor: pointer;
+  color: #484646;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #ddd;
+}
+
+<button
+    class="c0"
+    type="button"
+  />
+</DocumentFragment>
+`;
+
+exports[`button 组件测试 LoadingIconStyled 样式组件快照 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 0px;
+  height: 0px;
+  background-color: #fff;
+  border: 0px solid #319bef;
+  border-radius: 50%;
+  display: inline-block;
+  top: 11px;
+  position: absolute;
+  left: 20px;
+}
+
+.c0::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI2OC44MzEgMjY4LjgzMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjY4LjgzMSAyNjguODMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTIyMy4yNTUsODMuNjU5bC04MC03OS45OThjLTQuODgxLTQuODgxLTEyLjc5Ny00Ljg4MS0xNy42NzgsMGwtODAsODBjLTQuODgzLDQuODgyLTQuODgzLDEyLjc5NiwwLDE3LjY3OCAgIGMyLjQzOSwyLjQ0LDUuNjQsMy42NjEsOC44MzksMy42NjFzNi4zOTctMS4yMjEsOC44MzktMy42NjFsNTguNjYxLTU4LjY2MXYyMTMuNjU0YzAsNi45MDMsNS41OTcsMTIuNSwxMi41LDEyLjUgICBjNi45MDEsMCwxMi41LTUuNTk3LDEyLjUtMTIuNVY0Mi42NzdsNTguNjYxLDU4LjY1OWM0Ljg4Myw0Ljg4MSwxMi43OTcsNC44ODEsMTcuNjc4LDAgICBDMjI4LjEzNyw5Ni40NTUsMjI4LjEzNyw4OC41NDEsMjIzLjI1NSw4My42NTl6IiBmaWxsPSIjMzE5YmVmIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==');
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+<span
+    class="c0"
+  />
+</DocumentFragment>
+`;
+
+exports[`button 组件测试 button 快照 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  outline: none;
+  border: 0px;
+  margin: 0px;
+  border-radius: 4px;
+  padding: 6px 10px;
+  background: #fff;
+  cursor: pointer;
+  color: #484646;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #ddd;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  display: inline-block;
+  width: 0;
+  height: 20px;
+  margin-right: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: width 0.2s ease 0s,opacity 0.4s ease 0.2s, margin-right 0.3s ease 0s;
+  transition: width 0.2s ease 0s,opacity 0.4s ease 0.2s, margin-right 0.3s ease 0s;
+}
+
+.c3 {
+  margin-right: 5px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.c4 {
+  fill: none;
+  stroke: rgb(72 113 255);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 25,25;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: iIeKRO 2.3s ease-out infinite;
+  animation: iIeKRO 2.3s ease-out infinite;
+}
+
+<button
+    class="c0"
     type="button"
   >
     <div
-      class="sc-gtsrHT ljPrYI"
+      class="c1"
     >
       <span
-        class="sc-dlnjwi dDfwEM"
+        class="c2"
+        loading="0"
       >
         <svg
-          class="sc-hKFxyN cSAnyH"
+          class="c3"
           height="20"
           width="20"
         >
           <circle
-            class="sc-eCApnc ffLhqL"
+            class="c4"
             cx="10"
             cy="10"
             r="8"

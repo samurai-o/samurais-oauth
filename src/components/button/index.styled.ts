@@ -2,16 +2,24 @@ import styled, { keyframes } from "styled-components";
 
 // 类型文件
 export type ButtonLoadingContainerStyledProps = {
-  loading?: boolean;
+  loading?: boolean | number;
 };
 
 export type LoadingIconStyledStatus = "active" | "actived";
+export type ButtonHtmlType = "button" | "submit" | "reset";
+
+export type ButtonType = "forbidden" | "link";
 
 export type LoadingIconStyledProps = {
   status: LoadingIconStyledStatus;
 };
 
-export const ButtonStyled = styled.button`
+export type ButtonStyledProps = {
+  type: ButtonHtmlType;
+  types: ButtonType;
+}
+
+export const ButtonStyled = styled.button<ButtonStyledProps>`
   width: 100%;
   outline: none;
   border: 0px;
@@ -24,6 +32,7 @@ export const ButtonStyled = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: ${props => props.types === "forbidden" ? "#ddd" : "#fff"}
 `;
 
 export const ButtonLoadingxBOXStyled = styled.div`
