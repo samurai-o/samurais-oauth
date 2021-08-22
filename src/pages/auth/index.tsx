@@ -12,7 +12,7 @@ import RegisterPage from "./register";
 export function Auth(): JSX.Element {
 	const [status, setStatus] = useState(false);
 	const location = useLocation();
-
+	throw new Error("一场");
 	useEffect(() => { }, [location]);
 
 	return (
