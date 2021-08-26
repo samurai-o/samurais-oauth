@@ -22,7 +22,7 @@ export type ButtonProps = {
  * @returns 
  */
 export function Button(props: ButtonProps): JSX.Element {
-	const { htmlType = "button", pattern = "forbidden", children, loading = false } = props;
+	const { htmlType = "button", pattern = "default", children, loading = false } = props;
 	const _onClick = useCallback((e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		// 禁止默认事件
 		if (props.disabled) e.preventDefault();
@@ -33,7 +33,7 @@ export function Button(props: ButtonProps): JSX.Element {
 		<ButtonElement type={htmlType} pattern={pattern} onClick={_onClick}>
 			<ButtonLoadingContainer>
 				{children}
-				<ButtonLoadingElement isPlay={loading} />
+				<ButtonLoadingElement isPlay={loading} recover={loading} />
 			</ButtonLoadingContainer>
 		</ButtonElement>
 	);

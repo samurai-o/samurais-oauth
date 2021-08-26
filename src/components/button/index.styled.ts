@@ -1,14 +1,31 @@
 import styled, { keyframes } from "styled-components";
-import { ButtonLoadingElementProps, ButtonElementProps } from "./interface";
+import { ButtonLoadingElementProps, ButtonElementProps, ButtonPattern } from "./interface";
 
-const buttonloading = keyframes`
+const play = keyframes`
     from {
-      width:0
+      width: 0%;
     }
     to {
-      width:90%
+      width:98%;
     }
 `;
+
+const replay = keyframes`
+    from {
+      width: 0%;
+    }
+    to {
+      width:98%;
+    }
+`;
+
+
+export const ButtonColors: Record<ButtonPattern, string> = {
+	default: "#fff",
+	primary: "#ddd",
+	link: "blue",
+	forbidden: "red",
+};
 
 // loading进度
 export const ButtonLoadingElement = styled.span<ButtonLoadingElementProps>`
@@ -20,11 +37,14 @@ export const ButtonLoadingElement = styled.span<ButtonLoadingElementProps>`
   &::before {
     display: block;
     content: "";
-    width: 100%;
+    width: 0;
     height: 4px;
     background: #000000a6;
-    animation: ${buttonloading} 10s ease-out;
+    animation-name: ${props => props.recover ? play : replay};
+    animation-duration: 10s;
+    animation-timing-function: ease-out;
     animation-play-state: ${props => props.isPlay ? "running" : "paused"};
+    animation-fill-mode: backwards;
   }
 `;
 
@@ -43,8 +63,8 @@ export const ButtonElement = styled.button<ButtonElementProps>`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: ${props => props.pattern === "forbidden" ? "#fff" : "#fff"};
-  box-shadow: ${props => props.pattern === "forbidden" ? "6px 0 16px -8px rgb(0 0 0 / 8%), 9px 0 28px 0 rgb(0 0 0 / 0%)" : "#fff"};
+  background: ${props => ButtonColors[props.pattern]};
+  box-shadow: ${props => props.pattern === "default" ? "6px 0 16px -8px rgb(0 0 0 / 8%), 9px 0 28px 0 rgb(0 0 0 / 0%)" : "#fff"};
 `;
 
 export const ButtonLoadingContainer = styled.div`

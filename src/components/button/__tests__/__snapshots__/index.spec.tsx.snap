@@ -32,7 +32,7 @@ exports[`button 组件测试 ButtonElement 样式组件快照 1`] = `
 
 <button
     class="c0"
-    pattern="forbidden"
+    pattern="default"
     type="button"
   >
     按钮
@@ -53,13 +53,19 @@ exports[`button 组件测试 button 快照 1`] = `
 .c2::before {
   display: block;
   content: "";
-  width: 100%;
+  width: 0;
   height: 4px;
   background: #000000a6;
-  -webkit-animation: jMsNkg 10s ease-out;
-  animation: jMsNkg 10s ease-out;
+  -webkit-animation-name: kjLLRh;
+  animation-name: kjLLRh;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
 }
 
 .c0 {
@@ -103,7 +109,7 @@ exports[`button 组件测试 button 快照 1`] = `
 
 <button
     class="c0"
-    pattern="forbidden"
+    pattern="default"
     type="button"
   >
     <div
