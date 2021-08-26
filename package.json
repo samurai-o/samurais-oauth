@@ -95,6 +95,7 @@
     "workbox-webpack-plugin": "6.1.5"
   },
   "dependencies": {
+    "@frade-sam/samtools": "^1.0.20",
     "@samuras/samurai-network": "1.0.5",
     "@sentry/react": "6.10.0",
     "@sentry/tracing": "6.10.0",
@@ -106,6 +107,7 @@
     "react-dom": "17.0.2",
     "react-router-dom": "5.2.0",
     "rxjs": "7.2.0",
+    "samurais-log": "0.0.4",
     "styled-components": "5.3.0",
     "yup": "0.32.9"
   },
