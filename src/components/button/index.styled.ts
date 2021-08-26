@@ -71,3 +71,7 @@ export const ButtonLoadingContainer = styled.div`
   display: flex;
   align-items: center;
 `;
+
+export const LinkElement = styled.a`
+  
+`;

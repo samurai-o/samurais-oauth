@@ -3,7 +3,8 @@ import React, { useCallback } from "react";
 import {
 	ButtonLoadingElement,
 	ButtonLoadingContainer,
-	ButtonElement
+	ButtonElement,
+	LinkElement
 } from "./index.styled";
 import { ButtonHtmlType, ButtonPattern } from "./interface";
 
@@ -23,6 +24,10 @@ export type ButtonProps = {
  */
 export function Button(props: ButtonProps): JSX.Element {
 	const { htmlType = "button", pattern = "default", children, loading = false } = props;
+
+	if (pattern === "link") return <LinkElement>{children}</LinkElement>;
+
+
 	const _onClick = useCallback((e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		// 禁止默认事件
 		if (props.disabled) e.preventDefault();

@@ -123,3 +123,13 @@ exports[`button 组件测试 button 快照 1`] = `
   </button>
 </DocumentFragment>
 `;
+
+exports[`button 组件测试 link 快照 1`] = `
+<DocumentFragment>
+  <a
+    class=""
+  >
+    链接
+  </a>
+</DocumentFragment>
+`;

@@ -1,5 +1,4 @@
 {
-    "baseUrl": "http://localhost:3000",
     "video": true,
     "videosFolder": "cypress/videos",
     "videoUploadOnPasses": true,

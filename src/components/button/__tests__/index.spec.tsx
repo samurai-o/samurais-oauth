@@ -1,4 +1,6 @@
 import "jest-styled-components";
+import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/extend-expect";
 import React from "react";
 import { fireEvent, render } from "@testing-library/react";
 import { Button } from "..";
@@ -22,6 +24,12 @@ describe("button 组件测试", () => {
 	test("button 快照", () => {
 		const click = jest.fn();
 		const dom = render(<Button htmlType="button" disabled pattern="default" onClick={click}>测试</Button>);
+		expect(dom.asFragment()).toMatchSnapshot();
+	});
+
+	test("link 快照", () => {
+		const dom = render(<Button htmlType="button" pattern="link" disabled>链接</Button>);
+		expect(dom.getByText("链接")).toBeInTheDocument();
 		expect(dom.asFragment()).toMatchSnapshot();
 	});
 
