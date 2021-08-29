@@ -92,7 +92,7 @@ export default function LoginPage(): JSX.Element {
 						);
 					}}
 				</FastField>
-				<Button type="submit">
+				<Button htmlType="submit">
 					<SubmitText>提交</SubmitText>
 				</Button>
 			</Form>

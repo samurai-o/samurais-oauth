@@ -8,4 +8,5 @@
   "github-actions.workflows.pinned.refresh.enabled": true,
   "github-actions.workflows.pinned.refresh.interval": 65,
   "liveServer.settings.port": 5501,
+  "terminal.integrated.automationShell.osx": "zsh",
 }

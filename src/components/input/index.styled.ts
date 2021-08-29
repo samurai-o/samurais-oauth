@@ -24,3 +24,16 @@ export const InputStyled = styled.input`
     color: #fff;
   }
 `;
+
+// 输入框容器
+export const InputContainerElement = styled.div``;
+
+
+// 输入框
+export const InputElement = styled.input``;
+
+// 前缀
+export const PrefixElement = styled.div``;
+
+// 后缀
+export const SuffixElement = styled.div``;

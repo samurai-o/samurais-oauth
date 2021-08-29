@@ -12,8 +12,8 @@ import RegisterPage from "./register";
 export function Auth(): JSX.Element {
 	const [status, setStatus] = useState(false);
 	const location = useLocation();
-
-	useEffect(() => { }, [location]);
+	useEffect(() => {
+	}, [location]);
 
 	return (
 		<React.Fragment>

@@ -15,21 +15,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: cache node_modules
-        uses: actions/cache@v1
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
       - name: install packages
-        if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: test
-        run: npm run cypress
+      - name: test:e2e
+        run: npm run test:e2e
 
   jest:
     runs-on: ${{ matrix.os }}
@@ -55,8 +45,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: test
-        run: npm run jest
+      - name: jest
+        run: npm run test:unit
 
   build_job:
     needs: [cypress, jest]

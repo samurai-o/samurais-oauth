@@ -3,13 +3,11 @@ import React from "react";
 import { Text } from "@/components/text";
 import { useHistory } from "react-router-dom";
 import { Form, FastField, Formik } from "formik";
-import { useLazyQuery, useMutation } from "@apollo/client";
 import Input from "@/components/input";
 import { Button } from "@/components/button";
 import { registerValidationSchema } from "../form/validation";
 import { Errormessage } from "../form/errormessage";
 import { FormField, SubmitText } from "../form/form.styled";
-import { REGISTER } from "@/graphql/queries";
 
 export type Formdata = {
 	email: string;
@@ -20,11 +18,6 @@ export type Formdata = {
 
 export default function RegisterPage(): JSX.Element {
 	const { push } = useHistory();
-	const [register, { data, loading, error }] = useMutation(REGISTER, {
-		variables: {
-
-		}
-	});
 	const onsubmit = async () => {
 		console.log(1);
 		// throw new Error("1sss");
@@ -121,7 +114,7 @@ export default function RegisterPage(): JSX.Element {
 						);
 					}}
 				</FastField>
-				<Button type="submit">
+				<Button htmlType="submit">
 					<SubmitText>提交</SubmitText>
 				</Button>
 			</Form>

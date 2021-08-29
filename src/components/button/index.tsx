@@ -1,39 +1,44 @@
-import React from "react";
-import { useMemo } from "react";
+import { isFunc } from "@frade-sam/samtools";
+import React, { useCallback } from "react";
 import {
-	ButtonHtmlType,
-	ButtonLoadingContainerStyled,
-	ButtonLoadingStyled,
-	ButtonLoadingxBOXStyled,
-	ButtonStyled,
-	ButtonType,
-	LoadingCircleStyled,
+	ButtonLoadingElement,
+	ButtonLoadingContainer,
+	ButtonElement,
+	LinkElement
 } from "./index.styled";
+import { ButtonHtmlType, ButtonPattern } from "./interface";
 
 export type ButtonProps = {
-	type?: ButtonType,
+	pattern?: ButtonPattern,
 	htmlType?: ButtonHtmlType;
+	disabled?: boolean;
 	loading?: boolean;
 	children?: string | JSX.Element;
+	onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => void;
 };
 
+/**
+ * button按钮
+ * @param props 
+ * @returns 
+ */
 export function Button(props: ButtonProps): JSX.Element {
-	const { htmlType = "button", type = "forbidden", children, loading = false } = props;
-	const content = useMemo(() => {
-		const _con = [children];
-		if (type === "link") return _con;
-		_con.unshift(
-			<ButtonLoadingContainerStyled key="loading" loading={loading ? 1 : 0}>
-				<ButtonLoadingStyled width="20" height="20">
-					<LoadingCircleStyled cx="10" cy="10" r="8" />
-				</ButtonLoadingStyled>
-			</ButtonLoadingContainerStyled>,
-		);
-		return _con;
-	}, [loading, children, type]);
+	const { htmlType = "button", pattern = "default", children, loading = false } = props;
+	const _onClick = useCallback((e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => {
+		if (props.loading) return;
+		// 禁止默认事件
+		if (props.disabled) e.preventDefault();
+		if (isFunc(props.onClick) && !props.disabled) props.onClick(e);
+	}, [props]);
+
+	if (pattern === "link") return <LinkElement onClick={_onClick}>{children}</LinkElement>;
+
 	return (
-		<ButtonStyled type={htmlType} types={type}>
-			<ButtonLoadingxBOXStyled>{content}</ButtonLoadingxBOXStyled>
-		</ButtonStyled>
+		<ButtonElement type={htmlType} pattern={pattern} onClick={_onClick}>
+			<ButtonLoadingContainer>
+				{children}
+				<ButtonLoadingElement isPlay={loading} recover={loading} />
+			</ButtonLoadingContainer>
+		</ButtonElement>
 	);
 }

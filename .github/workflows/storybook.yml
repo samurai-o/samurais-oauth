@@ -1,5 +1,8 @@
 name: storybook
-on: [push]
+on:
+  push:
+    tags:
+      - v*
 
 jobs:
   publish:
