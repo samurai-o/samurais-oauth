@@ -25,7 +25,7 @@ export const InputElement = styled.input`
   font-family: sans-serif;
   letter-spacing: 2px;
   flex: 1;
-  color: #635757;
+  color: #252525;
   &:focus {
     outline: none;
     border: none;

@@ -3,3 +3,4 @@ dist
 coverage
 cypress/videos
 cypress/screenshots
+storybook-static
