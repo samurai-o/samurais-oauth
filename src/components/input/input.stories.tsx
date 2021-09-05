@@ -49,6 +49,10 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 export const Default = Template.bind({});
 Default.args = {
 	placeholder: "请输入字段",
-	type: "text"
+	type: "text",
+	onChange: (e) => {
+		e.stopPropagation();
+		console.log(e, e.target.value);
+	}
 } as InputProps;
 
