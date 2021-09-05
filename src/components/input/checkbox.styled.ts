@@ -26,8 +26,9 @@ export const CheckboxStyled = styled.input`
     position: absolute;
     top: 0px;
     border-radius: 10px;
-    border: 2px solid #fff;
-    background-color: rgb(72 113 255);
+    border: 2px solid #ddd;
+    background-color: transparent;
+    /* background-color: rgb(72 113 255); */
     color: #000;
     width: 18px;
     height: 18px;
@@ -39,13 +40,15 @@ export const CheckboxStyled = styled.input`
     transition: all 0.2s ease 0s;
   }
   &:checked::after {
+    font-family: system-ui;
     content: '✓';
     font-size: 12px;
     line-height: 1.2;
     text-align: center;
-    color: #fff;
+    color: #000;
     font-weight: bold;
-    border: 2px solid #fff;
+    border: 2px solid #000;
+    /* border: 2px solid #fff; */
     background-color: transparent;
   }
 `;

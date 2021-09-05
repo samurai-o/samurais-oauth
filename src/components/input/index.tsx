@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { InputHTMLAttributes } from "react";
-// import { Checkbox } from "./checkbox";
+import { isFunc } from "@frade-sam/samtools";
+import React, { InputHTMLAttributes, useCallback, EventHandler, SyntheticEvent } from "react";
+import { Checkbox, CheckboxProps } from "./checkbox";
 import { InputContainerElement, InputElement, PrefixElement, SuffixElement } from "./index.styled";
 
 export type InputType =
@@ -20,7 +21,7 @@ export type InputProps<V = any> = {
   placeholder?: string;
   type?: InputType;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "onChange" | "placeholder">;
+} & Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "onChange" | "placeholder"> & Pick<CheckboxProps, "children">;
 
 /**
  * 输入框
@@ -28,12 +29,29 @@ export type InputProps<V = any> = {
  * @returns 
  */
 export function Input(props: InputProps): JSX.Element {
-	const { prefix, suffix, ..._props } = props;
+	const { prefix, suffix, children, onChange, value, ..._props } = props;
+	const _onChange = useCallback(
+		(event: React.ChangeEvent<HTMLInputElement>) => {
+			if (isFunc(onChange)) {
+				if (props.type === "checkbox") {
+					const _event = { ...event, target: { ...event.target, value: event.target.checked } };
+					_event.__proto__ = event.__proto__;
+					return onChange(_event);
+				}
+				return onChange(event);
+			}
+		},
+		[onChange, props.type],
+	);
+
+
+	if (props.type === "checkbox") return <Checkbox onChange={_onChange} checked={!!props.value} {..._props}>{children}</Checkbox>;
+
 	return (
 		<InputContainerElement>
 			{/** 前缀,存在前缀就插入 */}
 			{prefix ? <PrefixElement>{prefix}</PrefixElement> : null}
-			<InputElement {..._props} />
+			<InputElement value={value} onChange={_onChange} {..._props} />
 			{/** 后缀 */}
 			{suffix ? <SuffixElement>{suffix}</SuffixElement> : null}
 		</InputContainerElement>
