@@ -3,7 +3,7 @@ import React from "react";
 import { Text } from "@/components/text";
 import { useHistory } from "react-router-dom";
 import { Form, FastField, Formik } from "formik";
-import Input from "@/components/input";
+import { Input } from "@/components/input";
 import { Button } from "@/components/button";
 import { registerValidationSchema } from "../form/validation";
 import { Errormessage } from "../form/errormessage";

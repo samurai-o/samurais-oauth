@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { Form, FastField, Formik } from "formik";
-import Input from "@/components/input";
+import { Input } from "@/components/input";
 import { useHistory } from "react-router-dom";
 import { Text } from "@/components/text";
 import { Button } from "@/components/button";

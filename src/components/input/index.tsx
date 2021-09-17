@@ -5,22 +5,22 @@ import { Checkbox, CheckboxProps } from "./checkbox";
 import { InputContainerElement, InputElement, PrefixElement, SuffixElement } from "./index.styled";
 
 export type InputType =
-  | "checkbox"
-  | "file"
-  | "hidden"
-  | "image"
-  | "password"
-  | "radio"
-  | "text";
+	| "checkbox"
+	| "file"
+	| "hidden"
+	| "image"
+	| "password"
+	| "radio"
+	| "text";
 export type InputProps<V = any> = {
-  id?: string;
-  name?: string;
-  value?: V;
-  prefix?: JSX.Element;
-  suffix?: JSX.Element;
-  placeholder?: string;
-  type?: InputType;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	id?: string;
+	name?: string;
+	value?: V;
+	prefix?: JSX.Element;
+	suffix?: JSX.Element;
+	placeholder?: string;
+	type?: InputType;
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "onChange" | "placeholder"> & Pick<CheckboxProps, "children">;
 
 /**
@@ -35,8 +35,8 @@ export function Input(props: InputProps): JSX.Element {
 			if (isFunc(onChange)) {
 				if (props.type === "checkbox") {
 					const _event = { ...event, target: { ...event.target, value: event.target.checked } };
-					_event.__proto__ = event.__proto__;
-					return onChange(_event);
+					(_event as any).__proto__ = (_event as any).__proto__;
+					return onChange(_event as any);
 				}
 				return onChange(event);
 			}
@@ -57,3 +57,5 @@ export function Input(props: InputProps): JSX.Element {
 		</InputContainerElement>
 	);
 }
+
+Input.Checkbox = Checkbox;
