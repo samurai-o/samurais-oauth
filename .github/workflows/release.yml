@@ -49,7 +49,7 @@ jobs:
         run: npm run test:unit
 
   build_job:
-    needs: [cypress, jest]
+    needs: [cypress]
     runs-on: ubuntu-latest
     name: build
     steps:
