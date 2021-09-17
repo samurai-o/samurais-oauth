@@ -48,7 +48,7 @@ export default function LoginPage(): JSX.Element {
 								<Input
 									id="email"
 									type="text"
-									autoComplete="username"
+									autoComplete="something-random-234234"
 									placeholder="邮箱"
 									{...meta.field}
 								/>
